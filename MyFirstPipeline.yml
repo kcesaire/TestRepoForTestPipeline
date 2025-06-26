@@ -1,0 +1,32 @@
+#This is a test source code for my first pipeline. This doesn't do anything right now.
+name: MyFirstPipeline
+trigger: none
+
+# parameters:
+# - name: message
+#  type: string
+#  default: 
+
+stages:
+- stage: stage_1
+  displayName: PPE
+  jobs:
+  - job: job_1_init
+    displayName: PPE_Init
+    steps:
+    - script: echo "hello from job_1_init"
+  - job: job_1_build
+    displayName: PPE_Build
+    steps:
+    - script: echo "hello from job_1_build"
+- stage: stage_2
+  displayName: Prod
+  jobs:
+  - job: job_2_init
+    displayName: Prod_Init
+    steps:
+    - script: echo "hello from job_2_init"
+  - job: job_2_build
+    displayName: Prod_Build
+    steps:
+    - script: echo "hello from job_2_build"
